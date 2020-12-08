@@ -1,5 +1,7 @@
 const answerarray = ["b", "c", "a", "b"];
 const form = document.querySelector(".quiz-form");
+const result = document.querySelector(".result");
+const submitans = document.querySelector(".submitans");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -13,5 +15,7 @@ form.addEventListener("submit", (e) => {
     }
   });
 
-  console.log(score);
+  result.querySelector("span").textContent = `${score}%`;
+  submitans.classList.add("d-none");
+  result.classList.remove("d-none");
 });
