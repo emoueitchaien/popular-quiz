@@ -18,7 +18,20 @@ form.addEventListener("submit", (e) => {
   });
 
   result.querySelector(".span1").textContent = `${User}, you are`;
-  result.querySelector(".span2").textContent = `${score}%`;
   submitans.classList.add("d-none");
   result.classList.remove("d-none");
+
+  let output = 0;
+  const timer = setInterval(() => {
+    result.querySelector(".span2").textContent = `${output}%`;
+    if (output === score) {
+      clearInterval(timer);
+    } else {
+      output++;
+    }
+  }, 10);
+
+  setTimeout(() => {
+    scrollTo(0, 0);
+  }, 4000);
 });
