@@ -166,8 +166,18 @@
     >
       Your name : &nbsp;
 
+      <script>
+        const setusername = (e) => {
+          e.preventDefault();
+          e.value = e.target.value;
+        };
+      </script>
+
       <input
+        id="username"
         type="text"
+        value=""
+        onchange="setusername(event)"
         class="username"
         style="
           margin-top: 30;
@@ -190,7 +200,10 @@
       class="result d-none py-4 text-primary text-center bg-white"
       style="font-size: 38"
     >
-      <p>You are <span class="text-primary display-3 p-3">0%</span>correct !</p>
+      <p>
+        <span style="font-size: 38" class="span1">You are</span
+        ><span class="span2 text-primary display-3 p-3">0%</span>correct !
+      </p>
     </div>
 
     <div class="text-center bg-primary" style="height: 70"></div>
