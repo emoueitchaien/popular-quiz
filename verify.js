@@ -33,5 +33,5 @@ form.addEventListener("submit", (e) => {
 
   setTimeout(() => {
     scrollTo(0, 0);
-  }, 4000);
+  }, 3000);
 });
